@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>condition JS</title>
+    <style>
+      div{
+        height: 500px;
+        text-align: center;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button>change color</button>
+    </div>
+    <p>Counter: <span id="counter">0</span></p>
+
+    <script>
+      const div = document.querySelector("div");
+      const btn = document.querySelector("button");
+      const colors = ["red", "orange", "yellow", "green", "blue"];
+      let colorIndex = 0;
+      let counter = 0;
+      const counterSpan = document.getElementById("counter");
+
+      btn.addEventListener("click", function() {
+        div.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+        counter++;
+        counterSpan.textContent = counter;
+      });
+    </script>
+  </body>
+</html>
+
